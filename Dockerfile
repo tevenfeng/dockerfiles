@@ -16,7 +16,8 @@
 # A image for building/testing brpc
 FROM ubuntu:16.04
 
-LABEL version=0.1
+LABEL version=0.1 \
+      maintainer="tevenfeng"
 
 # prepare env
 RUN apt-get update && apt-get install -y --no-install-recommends \
