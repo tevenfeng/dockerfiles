@@ -19,6 +19,8 @@ FROM ubuntu:16.04
 LABEL version=0.1 \
       maintainer="tevenfeng"
 
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
 # prepare env
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
