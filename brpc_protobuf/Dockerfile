@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # An image for building/testing C++ programs with protobuf and brpc
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL version=0.1 \
       maintainer="tevenfeng"
