@@ -39,8 +39,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libprotoc-dev \
         protobuf-compiler \
         libleveldb-dev \
-        libsnappy-dev && \
         libboost-dev \
+        libsnappy-dev && \
         apt-get clean -y
 
 RUN git clone https://github.com/brpc/brpc.git brpc
