@@ -40,14 +40,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         protobuf-compiler \
         libleveldb-dev \
         libsnappy-dev && \
+        libboost-dev \
         apt-get clean -y
 
 RUN git clone https://github.com/brpc/brpc.git brpc
 RUN cd /brpc \
     && sh config_brpc.sh --headers=/usr/include --libs=/usr/lib \
     && make -j "$(nproc)" \
-    && mkdir -p /usr/include/brpc \
-    && mv output/include/* /usr/include/brpc \
+    && mv -r output/include/* /usr/include \
     && mkdir -p /usr/lib/brpc \
     && mv output/lib/* /usr/lib/brpc \
     && cd .. \
