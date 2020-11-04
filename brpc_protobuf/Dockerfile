@@ -49,7 +49,6 @@ RUN cd /brpc \
     && sh config_brpc.sh --headers=/usr/include --libs=/usr/lib \
     && make -j "$(nproc)" \
     && mv output/include/* /usr/include \
-    && mkdir -p /usr/lib/brpc \
-    && mv output/lib/* /usr/lib/brpc \
+    && mv output/lib/* /usr/lib \
     && cd .. \
     && rm -rf brpc
