@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
         g++ \
+        cmake \
         make \
         libssl-dev \
         libgflags-dev \
