@@ -45,6 +45,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git clone https://github.com/brpc/brpc.git brpc
 RUN cd /brpc \
+    && sed -i "s/c++0x/c++11/g" Makefile \
     && sh config_brpc.sh --headers=/usr/include --libs=/usr/lib \
     && make -j "$(nproc)" \
     && mv output/include/* /usr/include \
